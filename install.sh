@@ -2,13 +2,13 @@
 
 dir=$(dirname $0)
 
-gconfdir=/apps/gnome-terminal/profiles
+gconfdir=/apps/mate-terminal/profiles
 
 declare -a schemes
 schemes=(dark light)
 
 declare -a profiles
-profiles=($(gconftool-2 -R $gconfdir | grep $gconfdir | cut -d/ -f5 |  cut -d: -f1))
+profiles=($(mateconftool-2 -R $gconfdir | grep $gconfdir | cut -d/ -f5 |  cut -d: -f1))
 
 die() {
   echo $1
@@ -56,7 +56,7 @@ get_profile_name() {
   # gconftool-2 still return 0 when the key does not exist, but it
   # does priint error message to STDERR, and command substitution
   # only gets STDOUT which means nothing at this point.
-  profile_name=$(gconftool-2 -g $gconfdir/$1/visible_name)
+  profile_name=$(mateconftool-2 -g $gconfdir/$1/visible_name)
   [[ -z $profile_name ]] && die "$1 is not a valid profile" 3
   echo $profile_name
 }
@@ -82,31 +82,31 @@ set_profile_colors() {
   local profile_path=$gconfdir/$profile
 
   # set color palette
-  gconftool-2 -s -t string $profile_path/palette $(cat $dir/colors/palette)
+  mateconftool-2 -s -t string $profile_path/palette $(cat $dir/colors/palette)
 
   # set foreground, background and highlight color
-  gconftool-2 -s -t string $profile_path/bold_color       $(cat $bd_color_file)
-  gconftool-2 -s -t string $profile_path/background_color $(cat $bg_color_file)
-  gconftool-2 -s -t string $profile_path/foreground_color $(cat $fg_color_file)
+  mateconftool-2 -s -t string $profile_path/bold_color       $(cat $bd_color_file)
+  mateconftool-2 -s -t string $profile_path/background_color $(cat $bg_color_file)
+  mateconftool-2 -s -t string $profile_path/foreground_color $(cat $fg_color_file)
 
   # make sure the profile is set to not use theme colors
-  gconftool-2 -s -t bool $profile_path/use_theme_colors false
+  mateconftool-2 -s -t bool $profile_path/use_theme_colors false
 
   # set highlighted color to be different from foreground color
-  gconftool-2 -s -t bool $profile_path/bold_color_same_as_fg false
+  mateconftool-2 -s -t bool $profile_path/bold_color_same_as_fg false
 }
 
 interactive_help() {
   echo
   echo "This script will ask you if you want a light or dark color scheme, and"
-  echo "which Gnome Terminal profile to overwrite."
+  echo "which Mate Terminal profile to overwrite."
   echo
   echo "Please note that there is no uninstall option yet. If you do not wish"
   echo "to overwrite any of your profiles, you should create a new profile"
   echo "before you run this script. However, you can reset your colors to the"
-  echo "Gnome default, by running:"
+  echo "Mate default, by running:"
   echo
-  echo "    gconftool-2 --recursive-unset /apps/gnome-terminal"
+  echo "    mateconftool-2 --recursive-unset /apps/mate-terminal"
   echo
   echo "By default, it runs in the interactive mode, but it also can be run"
   echo "non-interactively, just feed it with the necessary options, see"
@@ -142,7 +142,7 @@ interactive_select_profile() {
 
   set -- "${profile_names[@]}"
 
-  echo "Please select a Gnome Terminal profile:"
+  echo "Please select a Mate Terminal profile:"
   select profile_name
   do
     if [[ -z $profile_name ]]
