@@ -3,7 +3,7 @@ Solarized Colorscheme for Mate Terminal
 
 Scripts for setting the Solarized color set with Mate Terminal.
 
-This is nothing more than a fork of sigurdga's original [Gnome Terminal Colors repository] with some basic search-and-replace applied.
+This is nothing more than a fork of sigurdga's original [Gnome Terminal Colors Solarized repository] with some basic search-and-replace applied.
 
 Colors
 ------
@@ -19,9 +19,8 @@ See the [Solarized homepage] for theory behind the colors, screenshots, details
 and colorscheme versions for Vim, Mutt, popular terminal emulators and other
 applications.
 
-For the original works of Ethan Schoonover, visit the [Solarized repository]. The scripts for Gnome Terminal is maintained in [Gnome Terminal Colors repository].
-The scripts for Mate Terminal is maintained in [Mate Terminal Colors
-Solarized repository].
+For the original works of Ethan Schoonover, visit the [Solarized repository]. The scripts for Gnome Terminal is maintained in [Gnome Terminal Colors Solarized repository].
+The scripts for Mate Terminal is maintained in [Mate Terminal Colors Solarized repository].
 
 Installation and usage
 ----------------------
