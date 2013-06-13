@@ -28,7 +28,8 @@ Installation and usage
 Clone the [git repository], then run `./solarize`. To change between light and
 dark background, run `./solarize` again.
 
-    $ git clone git://github.com/sigurdga/mate-terminal-colors-solarized.git
+    $ git clone git://github.com/countjocular/mate-terminal-colors-solarized.git
+    $ cd mate-terminal-colors-solarized
     $ ./solarize
 
 Uninstall
@@ -58,6 +59,15 @@ Use the 16 colors terminal option to get VIM to look like GVIM with solarized
 colors.
 
     set t_Co=16
+
+Problems with Gnome 3.8
+-----------------------
+
+Switch to the Gnome 3.8 branch with the command :
+
+    git checkout gnome-3.8
+
+Then launch the install.sh script.
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
