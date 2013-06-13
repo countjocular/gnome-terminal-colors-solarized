@@ -1,13 +1,15 @@
-Solarized Colorscheme for Gnome Terminal
+Solarized Colorscheme for Mate Terminal
 ========================================
 
-Scripts for setting the Solarized color set with Gnome Terminal.
+Scripts for setting the Solarized color set with Mate Terminal.
+
+This is nothing more than a fork of sigurdga's original [Gnome Terminal Colors Solarized repository] with some basic search-and-replace applied.
 
 Colors
 ------
 
 Only the foreground, background and highlight colors are different in the light
-and dark color sets, as one of the main ideas behind Ethan Schonoovers work is
+and dark color sets, as one of the main ideas behind Ethan Schonoover's work is
 to use the same colors in the palette for both.
 
 If you are not happy, you can change which colors are used for what in the
@@ -17,9 +19,8 @@ See the [Solarized homepage] for theory behind the colors, screenshots, details
 and colorscheme versions for Vim, Mutt, popular terminal emulators and other
 applications.
 
-For the original works of Ethan Schoonover, visit the [Solarized repository].
-The scripts for Gnome Terminal is maintained in [Gnome Terminal Colors
-Solarized repository].
+For the original works of Ethan Schoonover, visit the [Solarized repository]. The scripts for Gnome Terminal is maintained in [Gnome Terminal Colors Solarized repository].
+The scripts for Mate Terminal is maintained in [Mate Terminal Colors Solarized repository].
 
 Installation and usage
 ----------------------
@@ -27,16 +28,17 @@ Installation and usage
 Clone the [git repository], then run `./solarize`. To change between light and
 dark background, run `./solarize` again.
 
-    $ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+    $ git clone git://github.com/countjocular/mate-terminal-colors-solarized.git
+    $ cd mate-terminal-colors-solarized
     $ ./solarize
 
 Uninstall
 ---------
 
-Change to another profile in Gnome Terminal, then remove the Solarized profile
+Change to another profile in Mate Terminal, then remove the Solarized profile
 by running:
 
-    $ rm -r ~/.gconf/apps/gnome-terminal/profiles/Solarized/
+    $ rm -r ~/.gconf/apps/mate-terminal/profiles/Solarized/
 
 Contributors
 ------------
@@ -45,6 +47,7 @@ Contributors
 * Paul Thomson <captbunzo@gmail.com>
 * Techlive Zheng <techlivezheng@gmail.com>
 * Daniel Graña <dangra@gmail.com>
+* Count Jocular <i.am.count.jocular@gmail.com>
 
 FAQ
 ===
@@ -68,5 +71,6 @@ Then launch the install.sh script.
 
 [Solarized homepage]:   http://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
-[Gnome Terminal Colors Solarized repository]: https://github.com/sigurdga/gnome-terminal-colors-solarized
+[Gnome Terminal Colors Solarized repository]:https://github.com/sigurdga/gnome-terminal-colors-solarized
+[Mate Terminal Colors Solarized repository]: https://github.com/countjocular/mate-terminal-colors-solarized
 [ls-colors-solarized]: https://github.com/sigurdga/ls-colors-solarized
